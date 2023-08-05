@@ -1,0 +1,38 @@
+datasource db {
+    url = "mongodb+srv://prismatest:wbrrIifq3t3YWDMK@cluster0.rjayhtz.mongodb.net/prismatest?retryWrites=true&w=majority"
+    provider = "mongodb"
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+model Users {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    name String
+    slogan String
+    about String
+    email String
+    mobile String
+    resume String
+    password String
+    @@map("users")
+}
+
+model Skills {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    name String
+    color String
+    @@map("skills")
+}
+
+model Projects {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    name String
+    color String
+    @@map("projects")
+}
+
+
+// user: prismatest
+// password: fjplneCCh7A7VSDE
