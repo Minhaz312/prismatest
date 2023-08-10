@@ -1,15 +1,15 @@
 import { NextResponse } from "next/server"
 export function middleware(req) {
   console.log("middleware")
-  const authorized = false;
+  const authorized = true;
   if(authorized){
-    return NextResponse.json("authorized")
+    return NextResponse.next()
   }
-  return NextResponse.status(401).json("unauthorized")
+  return NextResponse.json("unauthorized",{status:401})
 
 }
  
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: '/api/upload/',
+  matcher: '/api/:path*',
 }
