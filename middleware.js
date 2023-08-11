@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 export function middleware(req) {
-  console.log("middleware")
+  // console.log("middleware")
   const authorized = true;
   if(authorized){
     return NextResponse.next()
